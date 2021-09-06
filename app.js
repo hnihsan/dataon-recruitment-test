@@ -8,14 +8,20 @@ const app = express()
 app.set('view engine', 'pug')
 app.set('views', 'views')
 
-const adminRoutes = require('./routes/admin')
 const sessionRoutes = require('./routes/session')
+const usersRoutes = require('./routes/users')
+const roomsRoutes = require('./routes/rooms')
+// const schedulesRoutes = require('./routes/schedules')
+const homeRoutes = require('./routes/home')
 
 app.use(bodyParser.urlencoded({extended: false}))
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.use(sessionRoutes)
-app.use('/admin', adminRoutes)
+app.use('/auth', sessionRoutes)
+app.use('/users', usersRoutes)
+app.use('/rooms', roomsRoutes)
+// app.use('/schedules', schedulesRoutes)
+app.use(homeRoutes)
 
 
 app.listen(3000)

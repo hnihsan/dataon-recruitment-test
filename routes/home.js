@@ -2,11 +2,11 @@ const path = require('path');
 
 const express = require('express');
 
-const sessionController = require('../controllers/session');
+const homeController = require('../controllers/home');
 
 const router = express.Router();
 
 // /index => GET
-router.get('/login', sessionController.getLogin);
+router.get('/', homeController.getHomeIndex);
 
 module.exports = router;
