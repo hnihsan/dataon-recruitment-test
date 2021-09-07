@@ -7,12 +7,9 @@ block content
 
   div(class="row")
     div(class="col-md-12")
-      a(class="btn btn-primary mx-2" href="/schedules/new")
-        i(class="fas fa-plus")
-        | &nbsp; Add a schedule
-      a(class="btn btn-warning mx-2" href="/schedules/history")
-        i(class="fas fa-history")
-        | &nbsp; History
+      a(class="btn btn-primary mx-2" href="/schedules")
+        i(class="fas fa-arrow-left")
+        | &nbsp; Back
 
   div.row.mt-2
     div.col-md-12
@@ -27,7 +24,6 @@ block content
                   th Booked by
                   th From
                   th To
-                  th Action
               tfoot.tfoot-dark
                 tr
                   th
@@ -35,18 +31,14 @@ block content
                   th Booked by
                   th From
                   th To
-                  th Action
               tbody
                 each schedule in schedules
                   tr
                     td
-                      img(src="https://assets.aten.com/webpage/shared/Aten_BE/ISE2020/Meetingroom_Types_Medium.jpg" alt="meeting-rooms" class="img-thumbnail" style="max-width: 200px")
+                      img(src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" alt="meeting-rooms" class="img-thumbnail" style="max-width: 100px")
                     td.align-middle= schedule.Room.name
                     td.align-middle= schedule.User.fullname
                     td.align-middle= schedule.start_time.toLocaleString('en-US', {weekday: 'short',day: 'numeric',year: 'numeric',month: 'short',hour: 'numeric',minute: 'numeric',})
                     td.align-middle= schedule.end_time.toLocaleString('en-US', {weekday: 'short',day: 'numeric',year: 'numeric',month: 'short',hour: 'numeric',minute: 'numeric',})
-                    td.align-middle
-                      form(action='/schedules/delete/'+schedule.id method='POST')
-                        button.btn.btn-danger.mx-2 Delete
           else
             | No schedule available yet.

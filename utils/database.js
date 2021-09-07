@@ -6,6 +6,10 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD,
   {
     dialect: 'postgres',
+    dialectOptions: {
+      useUTC: false //for reading from database
+    },
+    timezone: '+07:00',
     host: process.env.DB_HOST,
     port: process.env.DB_PORT
   }
