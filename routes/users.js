@@ -6,14 +6,16 @@ const usersController = require('../controllers/users');
 
 const router = express.Router();
 
-router.get('/', usersController.getAddProduct);
+router.get('/', usersController.getUserList);
 
-router.get('/new', usersController.getNewProduct);
+router.get('/:userId', usersController.getUserDetail);
 
-router.post('/', usersController.postAddProduct);
+router.get('/new', usersController.getNewUser);
 
-router.get('/edit/:userId', usersController.getEditProduct);
+router.post('/', usersController.postAddUser);
 
-router.post('/edit/:userId', usersController.postEditProduct);
+router.get('/edit/:userId', usersController.getEditUser);
+
+router.post('/edit/:userId', usersController.postEditUser);
 
 module.exports = router;

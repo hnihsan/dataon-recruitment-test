@@ -5,7 +5,6 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Room Managements
-    link(href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet")
     link(href='/css/styles.css' rel="stylesheet")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js")
   body(class="sb-nav-fixed")
@@ -36,11 +35,19 @@ html(lang="en")
         nav(class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion")
           div(class="sb-sidenav-menu")
             div(class="nav")
-              div(class="sb-sidenav-menu-heading") Section
-              a(class="nav-link" href="index.html")
+              div(class="sb-sidenav-menu-heading") Data Management
+              a(class="nav-link" href="/rooms")
                 div(class="sb-nav-link-icon")
                   i(class="fas fa-tachometer-alt")
-                | Dashboard
+                | Rooms
+              a(class="nav-link" href="/users")
+                div(class="sb-nav-link-icon")
+                  i(class="fas fa-tachometer-alt")
+                | Users
+              a(class="nav-link" href="/schedules")
+                div(class="sb-nav-link-icon")
+                  i(class="fas fa-tachometer-alt")
+                | Schedules
 
               div(class="sb-sidenav-menu-heading") Section
               a(class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts")
@@ -62,7 +69,7 @@ html(lang="en")
         main
           div(class="container-fluid px-4")
             block content
-            
+
         footer(class="py-4 bg-light mt-auto")
           div(class="container-fluid px-4")
             div(class="d-flex align-items-center justify-content-between small")

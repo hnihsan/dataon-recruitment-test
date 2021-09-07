@@ -6,7 +6,9 @@ const roomsController = require('../controllers/rooms');
 
 const router = express.Router();
 
-router.get('/', roomsController.getAddRooms);
+router.get('/', roomsController.getRoomList);
+
+router.get('/:roomId', roomsController.getRoomDetail);
 
 router.get('/new', roomsController.getNewRooms);
 

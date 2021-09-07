@@ -5,3 +5,39 @@ block content
   ol(class="breadcrumb mb-4")
     li(class="breadcrumb-item active") List User
 
+  div(class="row")
+    div(class="col-md-12")
+      a(class="btn btn-primary" href="/users/new")
+        i(class="fas fa-plus")
+        | &nbsp; Add a User
+
+  div.row.mt-2
+    div.col-md-12
+      div(class="card mb-4")
+        div.card-body
+          if users.length > 0
+            table.table.table-striped
+              thead.thead-dark
+                tr
+                  th
+                  th Fullname
+                  th Email
+                  th Action
+              tfoot.tfoot-dark
+                tr
+                  th
+                  th Fullname
+                  th Email
+                  th Action
+              tbody
+                each user in users
+                  tr
+                    td
+                      img(src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" alt="meeting-rooms" class="img-thumbnail" style="max-width: 100px")
+                    td.align-middle= user.fullname
+                    td.align-middle= user.email
+                    td.align-middle
+                      a.btn.btn-primary.mx-2(href='/users/'+user.id) Detail
+                      a.btn.btn-warning.mx-2(href='/users/edit/'+user.id) Edit
+          else
+            | No users available yet.
