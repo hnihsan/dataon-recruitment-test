@@ -8,7 +8,11 @@ const sequelize = new Sequelize(
     dialect: 'postgres',
     dialectOptions: {
       useUTC: false, //for reading from database
-      rejectUnauthorized: false
+      ssl: {
+        require: true,
+        // Ref.: https://github.com/brianc/node-postgres/issues/2009
+        rejectUnauthorized: false,
+      },
     },
     timezone: '+07:00',
     host: process.env.DB_HOST,
