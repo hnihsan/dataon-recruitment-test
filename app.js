@@ -1,7 +1,10 @@
+require('dotenv').config()
 const path = require('path');
 
 const express = require('express')
 const bodyParser = require('body-parser')
+
+const sequelize = require('./utils/database')
 
 const app = express()
 
@@ -23,5 +26,4 @@ app.use('/rooms', roomsRoutes)
 // app.use('/schedules', schedulesRoutes)
 app.use(homeRoutes)
 
-
-app.listen(3000)
+app.listen(3000);

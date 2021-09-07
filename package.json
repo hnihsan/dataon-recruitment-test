@@ -1,11 +1,15 @@
 {
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "pug": "^3.0.2"
+    "pg": "^8.7.1",
+    "pug": "^3.0.2",
+    "sequelize": "^6.6.5"
   },
   "name": "dataon-recruitment-test",
   "version": "1.0.0",
