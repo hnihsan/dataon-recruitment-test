@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/', roomsController.getRoomList);
 
-router.get('/:roomId', roomsController.getRoomDetail);
+router.get('/show/:roomId', roomsController.getRoomDetail);
 
 router.get('/new', roomsController.getNewRooms);
 

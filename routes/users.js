@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/', usersController.getUserList);
 
-router.get('/:userId', usersController.getUserDetail);
+router.get('/show/:userId', usersController.getUserDetail);
 
 router.get('/new', usersController.getNewUser);
 
